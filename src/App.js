@@ -1,17 +1,24 @@
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import BookingPage from './pages/BookingPage';
+import OrderOnlinePage from './pages/OrderOnlinePage';
+import LoginPage from './pages/LoginPage';
+// eslint-disable-next-line
+import ConfirmedBooking from './components/ConfirmedBooking';
 import './App.css';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Main from './components/Main';
-import Menu from './components/Menu';
+
 
 function App() {
   return (
-    <>
-      <Header/>
-      <Main/>
-      <Menu/>
-      <Footer/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/reservations" element={<BookingPage />} />
+        <Route path="/order" element={<OrderOnlinePage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
   );
 }
 

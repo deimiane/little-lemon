@@ -1,52 +1,101 @@
-import React from 'react'
-import logo from '../images/Logo .svg'
-import { Link } from 'react-router-dom'
+import restaurant from '../images/restaurant.jpg';
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer>
-      <section>
-        <div className='company-info'>
-          <img src={logo} alt="Logo" />
-          <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-        </div>
-        <div className='company-details'>
-          <div>
-            <h3>Important Links</h3>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/">About</a></li>
-              <li><a href="/">Menu</a></li>
-              <li><a href="/">Reservations</a></li>
-              <li><a href="/">Order Online</a></li>
-              <li><a href="/">Login</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Contact</h3>
-            <ul>
-              <li>Address: <br/> 123 Towncity, USA</li>
-              <li>Phone: <br/> + 0123 456 789</li>
-              <li>Email: <br/> little@lemon.com</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Social Media Links</h3>
-            <ul>
-              <li><a href="/">Facebook</a></li>
-              <li><a href="/">Instagram</a></li>
-              <li><a href="/">Twitter</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <div className='copyright'>
-        <Link to="https://stephenrivero.vercel.app/" target='_blank'>
-          © 2024 Little Lemon - All rights reserved
-        </Link>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(12, 1fr)',
+      gridGap: '10px',
+      backgroundColor: '#333333',
+      color: 'white',
+      listStyle: 'none',
+      textAlign: 'center',
+      margin: '0 0 0 0',
+      padding: '20px 0 20px 0',
+    }}>
+      <img src={restaurant} alt="logo" style={{
+        width: '108px',
+        height: '192px',
+        cursor: 'pointer',
+        objectFit: 'cover',
+        gridColumn: '3 / span 1',
+      }}
+        onClick={() => {
+          window.location.href = '/';
+        }}
+      />
+      <div style={{
+        gridColumn: '4 / span 8',
+        display: 'flex',
+        padding: '10px',
+      }}>
+        <ul id="doormat-nav" style={{
+          flex: '1',
+          padding: '0',
+          margin: '0',
+          listStyle: 'none',
+          textAlign: 'left',
+        }}>
+          <li className="title" style={{
+            fontSize: '1.2em',
+            fontWeight: 'bold',
+          }}>Doormat Navigation</li>
+          <li><a style={{color: 'white', textDecoration: 'none'}} href="/">Home</a></li>
+          <li><a style={{color: 'white', textDecoration: 'none'}} href="#about">About</a></li>
+          <li><a style={{color: 'white', textDecoration: 'none'}} href="#menu">Menu</a></li>
+          <li><a style={{color: 'white', textDecoration: 'none'}} href="/reservations">Reservations</a></li>
+          <li><a style={{color: 'grey', textDecoration: 'none'}} href="/">Order Online</a> </li>
+          <li><a style={{color: 'grey', textDecoration: 'none'}} href="/">Login</a></li>
+        </ul>
+        <ul id="contact" style={{
+          flex: '1',
+          padding: '0',
+          margin: '0',
+          listStyle: 'none',
+          textAlign: 'left',
+        }}>
+          <li className="title" style={{
+            textAlign: 'left',
+            fontSize: '1.2em',
+            fontWeight: 'bold',
+          }}>Contact</li>
+          <li>
+            123 Sesame Street, Anytown, USA
+          </li>
+          <li>555-123-4567</li>
+          <li>
+            <a href="mailto:littlelemon@fakemail.com" style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}>littlelemon@fakemail.com</a>
+          </li>
+        </ul>
+        <ul id="social-media-links" style={{
+          flex: '1',
+          padding: '0',
+          margin: '0',
+          listStyle: 'none',
+          textAlign: 'left',
+
+
+        }}>
+          <li className="title" style={{
+            fontSize: '1.2em',
+            fontWeight: 'bold',
+
+          }}>Social Media Links</li>
+          <li><a href="www.facebook.com" style={{
+            color: 'white',
+            textDecoration: 'none',
+          }}>Facebook</a></li>
+          <li><a href="www.instagram.com" style={{
+            color: 'white',
+            textDecoration: 'none',
+          }}>Instagram</a></li>
+        </ul>
       </div>
-    </footer>
-  )
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;
